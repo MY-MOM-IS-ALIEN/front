@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            border: 5px solid black;
+            height: 930px;
+            
+            /* background-color: dodgerblue; */
+            background-image: url(../images/);
+            background-size: cover;
+            background-repeat: no-repeat;
+            }
+        div{
+            width: 100px;
+            height: 100px;
+        }
+        #container1{
+            border: 5px solid red;
+        }
+        #container2{
+            border: 5px solid green;
+        }
+        #container3{
+            border: 5px solid blue;
+        }
+        #container4{
+            border: 5px solid yellow;
+        }
+
+    </style>
+</head>
+<body>
+    <a href="https://www.google.com" target="_blank"><img src="../images/다운로드.png" width = "500" height = "300" alt="엑박"></a>
+    
+    <form action="/member-login" method="post">
+        <label for="email">E_mail</label>
+        <input type="text" id="email" name="email" placeholder="이메일을 입력해주세요">
+        <label for="password">Password</label>
+        <input type="text" id="password" name="password" placeholder="비밀번호를 입력해주세요">
+        <input type="submit" value="확인">
+    </form>
+    
+</body>
+</html>
