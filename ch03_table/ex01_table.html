@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 복합선택자 : 여러개의 요소를 한 번에 지정 */
+        table,
+        tr,
+        td,
+        th {
+            border: 1px solid hotpink;
+            /* border-collapse: collapse : 선합치기 */
+            border-collapse: collapse;
+            /* padding : 상하좌우 여백 */
+            padding: 10px;
+        }
+        td{
+            /* text-align: center : 가운데 정렬 */
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <th>
+                항목1
+            </th>
+            <th>
+                항목2
+            </th>
+            <th>
+                항목3
+            </th>
+            <th>
+                항목4
+            </th>
+        </tr>
+        <tr>
+            <td>
+                html
+            </td>
+            <td>
+                CSS
+            </td>
+            <td>
+                javascript
+            </td>
+            <!-- rowspan : 아래로 병합 -->
+            <td rowspan="2">
+                vscode
+            </td>
+        </tr>
+        <tr>
+            <td>
+                java
+            </td>
+            <!-- colspan : 좌,우로 병합 -->
+            <td colspan="2">
+                database
+            </td>
+        </tr>
+        <tr>
+            <td colspan="4">
+                <img src="../images/다운로드.png" alt="엑박" width="300">
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>
