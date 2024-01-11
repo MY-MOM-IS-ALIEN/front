@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            border: 5px solid black;
+            height: 930px;
+
+            /* background-color: dodgerblue; */
+            background-image: url(../images/sky_stars_clouds_103745_1024x768.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        div {
+            width: 100px;
+            height: 100px;
+        }
+
+        #container1 {
+            border: 5px solid red;
+        }
+
+        #container2 {
+            border: 5px solid green;
+        }
+
+        #container3 {
+            border: 5px solid blue;
+        }
+
+        #container4 {
+            border: 5px solid yellow;
+        }
+
+        #id1 {
+            display: flex;
+            justify-content: center;
+            position: relative;
+            
+        }
+        #id2 {
+
+        }
+    </style>
+</head>
+
+<body>
+    <a href id="id1"="http://127.0.0.1:5500/practice.html" target="_blank"><img src="../images/pngwing1.com.png"
+            width="800" height="800" alt="엑박"></a>
+
+    <form id = "id2"action="/member-login" method="post">
+        <label for="email">E_mail</label>
+        <input type="text" id="email" name="email" placeholder="이메일을 입력해주세요">
+        <label for="password">Password</label>
+        <input type="text" id="password" name="password" placeholder="비밀번호를 입력해주세요">
+        <input type="submit" value="확인">
+    </form>
+
+</body>
+
+</html>
