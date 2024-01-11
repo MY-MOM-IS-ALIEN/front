@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>회원가입</h2>
+    email : <input type="text" id="email" name="email" onblur="email_check()" placeholder="이메일을 입력하세요"><br>
+    <span id="email-check"></span><br>
+    password : <input type="text" id="password" name="password" onblur="password_check()" placeholder="패스워드를 입력하세요"><br>
+    <span id="password-check"></span><br>
+    password 확인 : <input type="text" id="password-re" name="passwordRe" onblur="password_equal_check()" placeholder="패스워드를 입력하세요"><br>
+    <span id="password-equal-check"></span><br>
+</body>
+<script>
+    const email_check = () => {
+        const email = document.getElementById("email").value;
+        const emailCheck = document.getElementById("email-check");
+        console.log(email.length);
+        // 글자수가 5~10 글자가 안되면 5~10글자로 입력해달라고 빨간색 출력
+        // 5~10글자로 작성하면 녹색 출력
+        if (email.length == 0) {
+            // alert("필수 입력입니다!")
+            emailCheck.innerHTML = "필수 입력입니다.";
+            emailCheck.style.color = "red";
+        } else if (email.length >= 11 || email.length <= 4) {
+            emailCheck.innerHTML = "5~10글자 사이로 입력해주세요.";
+            emailCheck.style.color = "red";
+        } else if (email.length >= 5 || email.length <= 10) {
+            emailCheck.innerHTML = "사용 가능한 아이디입니다.";
+            emailCheck.style.color = "green";
+        }
+    }
+    const password_equal_check = () => {
+        const password = document.getElementById("password").value;
+        const passwordRe = document.getElementById("password-re").value;
+        const passwordCheck = document.getElementById("password-equal-check")
+        if(password == passwordRe){
+            passwordCheck.innerHTML = "동일한 비밀번호 입니다.";
+            passwordCheck.style.color = "green";
+        }else if(password != passwordRe){
+            passwordCheck.innerHTML = "비밀번호가 일치하지 않습니다.";
+            passwordCheck.style.color = "red";
+        }else if(password.length < 0 || passwordRe.length < 0){
+            passwordCheck.innerHTML = "패스워드를 입력해주세요.";
+            passwordCheck.style.color = "red";
+        }
+    }
+</script>
+
+</html>
