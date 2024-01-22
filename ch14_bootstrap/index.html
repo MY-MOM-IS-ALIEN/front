@@ -183,11 +183,13 @@
       <h1 class="h3 mb-3 fw-normal">회원가입</h1>
 
       <div class="form-floating">
-        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" required>
+        <input type="email" class="form-control" id="email" placeholder="name@example.com" onblur="email_check()" required>
+        <h6 id="email-check"></h6>
         <label for="floatingInput">Email</label>
       </div><br>
       <div class="form-floating">
-        <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+        <input type="password" class="form-control" id="Password" placeholder="Password" onblur="pass_check()" required>
+        <h6 id="password-check"></h6>
         <label for="floatingPassword">Password</label>
       </div><br>
       <div class="form-floating">
@@ -198,14 +200,14 @@
         Valid name is required.
       </div><br>
       <div class="form-floating">
-        <input type="text" class="form-control" id="floatingdob" placeholder="" required>
+        <input type="text" class="form-control" id="dob" placeholder="" onblur="dob_check()" required>
+        <h6 id="dob-check"></h6>
         <label for="floatingdob">생년월일 8자리</label><br>
       </div>
 
-      <div></div>
-
       <div class="form-floating">
-        <input type="text" class="form-control" id="floatingNumber" placeholder="" value="010-" required>
+        <input type="text" class="form-control" id="phoneNumber" placeholder="" value="010-" onblur="number_check()" required>
+        <h6 id="Number-check"></h6>
         <label for="floatingNumber">전화번호</label><br>
         <button class="btn btn-primary w-50 py-2" type="submit">전화번호 인증</button>
       </div>
@@ -224,7 +226,91 @@
 
 </body>
 <script>
-  
+  email_check = () => {
+      const email = document.getElementById("email").value;
+      const emailCheck = document.getElementById("email-check");
+      const exp = /^(?=.*[a-z])(?=.*\d)(?=.*[@]).{10,30}$/;
+
+      if (email.trim().length === 0) {
+        emailCheck.innerHTML = "이메일은 필수 입력입니다.";
+        emailCheck.style.color = "red";
+      } else if (exp.test(email)) {
+        emailCheck.innerHTML = "사용 가능한 이메일입니다.";
+        emailCheck.style.color = "green";
+      } else {
+        emailCheck.innerHTML = "사용 불가능한 이메일입니다. 다시 확인해주세요.";
+        emailCheck.style.color = "red";
+      }
+    }
+
+    pass_check = () => {
+      const password = document.getElementById("Password").value;
+      const passCheck = document.getElementById("password-check");
+      const exp = /^(?=.*[a-z])(?=.*\d).{6,15}$/;
+
+      if (password.trim().length === 0) {
+        passCheck.innerHTML = "패스워드는 필수 입력입니다.";
+        passCheck.style.color = "red";
+      } else if (exp.test(password)) {
+        passCheck.innerHTML = "사용 가능한 패스워드입니다.";
+        passCheck.style.color = "#28a745"; /* 사용 가능한 패스워드 메시지의 색상 */
+      } else {
+        passCheck.innerHTML = "사용 불가능한 패스워드입니다. 다시 확인해주세요.";
+        passCheck.style.color = "red";
+      }
+    }
+
+    dob_check = () => {
+      const dob = document.getElementById("dob").value;
+      const dobCheck = document.getElementById("dob-check");
+      const exp = /^(?=.*\d).{8}$/;
+
+      if (dob.trim().length === 0) {
+        dobCheck.innerHTML = "생년월일은 필수 입력입니다.";
+        dobCheck.style.color = "red";
+      } else if (exp.test(dob)) {
+        dobCheck.innerHTML = "";
+        dobCheck.style.color = "green";
+      } else {
+        dobCheck.innerHTML = "생년월일을 다시 확인해주세요.";
+        dobCheck.style.color = "red";
+      }
+    }
+
+    dob_check = () => {
+      const dob = document.getElementById("dob").value;
+      const dobCheck = document.getElementById("dob-check");
+      const exp = /^(?=.*\d).{8}$/;
+
+      if (dob.trim().length === 0) {
+        dobCheck.innerHTML = "생년월일은 필수 입력입니다.";
+        dobCheck.style.color = "red";
+      } else if (exp.test(dob)) {
+        dobCheck.innerHTML = "";
+        dobCheck.style.color = "green";
+      } else {
+        dobCheck.innerHTML = "생년월일을 다시 확인해주세요.";
+        dobCheck.style.color = "red";
+      }
+    }
+
+    number_check = () => {
+      const phoneNumber = document.getElementById("phoneNumber").value;
+      const NumberCheck = document.getElementById("Number-check");
+      const exp = /^\d{3}-\d{4}-\d{4}$/;
+
+      if (phoneNumber.length === 4) {
+        NumberCheck.innerHTML = "전화번호를 입력해주세요.";
+        NumberCheck.style.color = "red";
+      } else if (exp.test(phoneNumber)) {
+        NumberCheck.innerHTML = "";
+        NumberCheck.style.color = "green";
+      } else {
+        NumberCheck.innerHTML = "전화번호를 다시 확인해주세요.";
+        NumberCheck.style.color = "red";
+      }
+    }
+
 </script>
 
 </html>
